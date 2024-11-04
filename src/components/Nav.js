@@ -1,18 +1,18 @@
-import React from "react";
-import piggy from "../assets/porco.png";
+import React from 'react';
 
-const Nav = () => {
-	return (
-		<div className="navWrapper">
-			<span className="headerText">HogWild</span>
-			<div className="TwirlyPig">
-				<img src={piggy} className="App-logo" alt="piggy" />
-			</div>
-			<span className="normalText">
-				A React App for County Fair Hog Fans
-			</span>
-		</div>
-	);
+const Nav = ({ toggleGreasedFilter, handleSortChange }) => {
+  return (
+    <div>
+      <label>
+        <input type="checkbox" onChange={toggleGreasedFilter} />
+        Greased Hogs
+      </label>
+      <select onChange={(e) => handleSortChange(e.target.value)}>
+        <option value="name">Sort by Name</option>
+        <option value="weight">Sort by Weight</option>
+      </select>
+    </div>
+  );
 };
 
 export default Nav;
